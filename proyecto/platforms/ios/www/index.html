@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <link rel="stylesheet" type="text/css" href="lib/framework7/css/framework7.ios.min.css" />
+    <link rel="stylesheet" type="text/css" href="lib/framework7/css/framework7.ios.colors.min.css" />
+    <link rel="stylesheet" type="text/css" href="lib/framework7/css/framework7-icons.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>BRst</title>
+    <style>
+    	.panel{
+    		background: #92ce9c;
+    	}
+    	.tabbar a.active{
+    		color: #007992;
+    	}
+
+    	a{
+    		color: #007992;
+    	}
+
+    	.page-content{
+  			background-image: url("img/segunda.jpg");
+		}
+
+    </style>
+</head>
+
+<body >
+
+
+
+	<div class="panel-overlay"></div>
+ 
+    <!-- Left panel, let it be with reveal effect -->
+    <div class="panel panel-left panel-cover">
+        <!--aqui va el contenido del panel lateral izquierdo-->
+        <div class="content-block-title">panel usuario</div>
+	    <!-- Inset content block -->
+	    <div class="content-block inset">
+	      <div class="content-block-inner">
+	      	
+	      	<div id="nosesion">
+	      		<p>no hay sesión de usuario</p>
+	        	<p>
+	        		<center>
+                		<a id="iniciar" class="open-login-screen">inicia sesión</a>
+                		<i class="f7-icons">login</i>
+                	</center>	
+	        	</p>
+	      	</div>	
+
+	      	<div id="sesion" style="display: none;">
+	      		<center>
+	      			<img src="img/user.png" width= "100px">
+	      			<p id="name"><i class="f7-icons">person</i> name</p>
+	      			<p id="mail"><i class="f7-icons">email</i>mail</p>
+	      		</center>
+	      	</div>
+
+	      </div>
+	    </div>
+    </div>
+ 
+    <!-- Right panel, with cover effect -->
+    <div class="panel panel-right panel-cover">
+        <!--aqui va el contenido del panel lateral derecho-->
+        <div class="content-block-title">menú</div>
+	    <!-- Inset content block -->
+	    	
+	        <div class="list-block">
+      			<ul>
+      				<li class="item-content">
+			          <div class="item-inner">
+			            <div class="item-title"> primer item</div>
+			          </div>
+			        </li>
+			        <li class="item-content">
+			          <div class="item-inner">
+			            <div class="item-title">segundo item</div>
+			          </div>
+			        </li>
+			        <li class="item-content">
+			          <div class="item-inner">
+			            <div class="item-title">tercer item</div>
+			          </div>
+			        </li>
+      			</ul>
+      		</div>
+	     	    
+    </div>
+
+    <div class="login-screen">
+	    <div class="view">
+	      <div class="page">
+	        <div class="page-content login-screen-content">
+	          <div class="login-screen-title">BRestaurant</div>
+	          <form>
+	            <div class="list-block">
+	              <ul>
+	                <li class="item-content">
+	                  <div class="item-inner">
+	                    <div class="item-title label">email</div>
+	                    <div class="item-input">
+	                      <input type="text" name="username" placeholder="Ingrese su email">
+	                    </div>
+	                  </div>
+	                </li>
+	                <li class="item-content">
+	                  <div class="item-inner">
+	                    <div class="item-title label">Password</div>
+	                    <div class="item-input">
+	                      <input type="password" name="password" placeholder="Ingrese su contraseña">
+	                    </div>
+	                  </div>
+	                </li>
+	              </ul>
+	            </div>
+	            <div class="list-block">
+	              <ul>
+	                <li><a href="#" class="item-link list-button">Iniciar Sesión</a></li>
+	              </ul>
+	              <div class="list-block-label">
+	                <p>Al iniciar sesión podrá acceder a su cuenta </p>
+	                <p><a href="#" class="close-login-screen">Cerrar Ventana</a></p>
+	              </div>
+	            </div>
+	          </form>
+	        </div>
+	      </div>
+	    </div>
+  	</div>
+
+    <!-- Views -->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-fixed toolbar-fixed">
+          <!-- Page, "data-page" contains page name -->
+          <div data-page="index" class="page">
+ 
+            <!-- Top Navbar. In Material theme it should be inside of the page-->
+            <div class="navbar">
+              <div class="navbar-inner">
+
+              <!--inicio del icono de la barra latera izquierda-->
+              	<div class="left">
+              		<a class="link open-panel" data-panel="left">
+              			<i class="f7-icons">person_fill</i>
+               		</a>
+              	</div>
+
+                <!--titulo de la aplicacion-->
+                <div class="center">BRestaurant</div>
+                
+                <!--inicio del icono de la barra latera derecha-->
+                <div class="right">
+                	<a class="link open-panel" data-panel="right">
+              			<i class="f7-icons">menu</i>
+              		</a>
+                </div>
+
+              </div>
+            </div>
+ 
+            <!-- Toolbar. In Material theme it should be inside of the page-->
+            <div class="toolbar tabbar tabbar-labels">
+              <div class="toolbar-inner">
+                <!-- Toolbar links -->
+                <!--nuevo icono-->
+                <a href="#" class="tab-link active">
+                	<i class="icon">
+	                	<i class="f7-icons">tags</i>
+	                	<span class="badge bg-red">1</span>
+                	</i>
+                	<span class="tabbar-label">notificaciones</span>
+                </a>
+                <!--nuevo icono-->
+         
+                
+                <a href="#" class="tab-link active">
+
+                	<i class="f7-icons">compass</i>
+                	<span class="tabbar-label">buscar</span>
+                </a>
+                
+
+                <!--nuevo icono-->
+                <a href="#" class="tab-link active">
+                	<i class="f7-icons">data</i>
+                	<span class="tabbar-label">mis lugares</span>
+                </a>
+
+              </div>
+            </div>
+ 
+            <!-- Scrollable page content -->
+            <div class="page-content">
+              <div class="content-block inset">
+              	<!--inicio de Popup-->
+              	<div class="popup popup-services">
+				    <div class="content-block">
+				      <p>Services</p>
+				      <p><a href="#" class="close-popup">Close popup</a></p>
+				      <p>Lorem ipsum dolor ...</p>
+				    </div>
+				</div>
+
+	      		<div class="content-block-inner">
+	              <p>Aqui va toa la challa</p>
+	              <!-- Link to another page -->
+	              <a href="about.html">About app</a>
+	            </div>
+	           </div>  
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    
+</body>
+
+</html>
